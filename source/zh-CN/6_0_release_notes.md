@@ -1,35 +1,28 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+# Ruby on Rails 6.0 发布记
 
-Ruby on Rails 6.0 Release Notes
-===============================
-
-Highlights in Rails 6.0:
+Rails 6.0 的重要变化：
 
 * Action Mailbox
 * Action Text
 * Parallel Testing
 * Action Cable Testing
 
-These release notes cover only the major changes. To learn about various bug
-fixes and changes, please refer to the change logs or check out the [list of
-commits](https://github.com/rails/rails/commits/6-0-stable) in the main Rails
-repository on GitHub.
+本文只涵盖重要变化。若想了解缺陷修正和具体变化，请查看更新日志或 GitHub 中 Rails 主仓库的[提交历史](https://github.com/rails/rails/commits/6-1-stable)。
 
 --------------------------------------------------------------------------------
 
-Upgrading to Rails 6.0
-----------------------
+<a class="anchor" id="upgrading-to-rails-6-1"></a>
 
-If you're upgrading an existing application, it's a great idea to have good test
-coverage before going in. You should also first upgrade to Rails 5.2 in case you
-haven't and make sure your application still runs as expected before attempting
-an update to Rails 6.0. A list of things to watch out for when upgrading is
-available in the
-[Upgrading Ruby on Rails](upgrading_ruby_on_rails.html#upgrading-from-rails-5-2-to-rails-6-0)
-guide.
+## 升级到 Rails 6.0
 
-Major Features
---------------
+如果升级现有应用，在继续之前，最好确保有足够的测试覆盖度。如果尚未升级到 Rails 5.2，应该先升级到 5.2 版，确保应用能正常运行之后，再尝试升级到 Rails 6.0。升级时的注意事项参见 [从 Rails 5.2 升级到 6.0](upgrading_ruby_on_rails.html#upgrading-from-rails-5-2-to-rails-6-0)。
+
+
+<a class="anchor" id="major-features"></a>
+
+## 主要功能
+
+
 
 ### Action Mailbox
 
@@ -75,7 +68,7 @@ Railties
 
 Please refer to the [Changelog][railties] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove deprecated `after_bundle` helper inside plugins templates.
     ([Commit](https://github.com/rails/rails/commit/4d51efe24e461a2a3ed562787308484cd48370c7))
@@ -93,7 +86,7 @@ Please refer to the [Changelog][railties] for detailed changes.
 *   Remove deprecated `config.secret_token`.
     ([Commit](https://github.com/rails/rails/commit/46ac5fe69a20d4539a15929fe48293e1809a26b0))
 
-### Deprecations
+### 弃用
 
 *   Deprecate passing Rack server name as a regular argument to `rails server`.
     ([Pull Request](https://github.com/rails/rails/pull/32058))
@@ -104,7 +97,7 @@ Please refer to the [Changelog][railties] for detailed changes.
 *   Deprecate accessing hashes returned by `config_for` by non-symbol keys.
     ([Pull Request](https://github.com/rails/rails/pull/35198))
 
-### Notable changes
+### 重要变化
 
 *   Add an explicit option `--using` or `-u` for specifying the server for the
     `rails server` command.
@@ -149,17 +142,17 @@ Action Cable
 
 Please refer to the [Changelog][action-cable] for detailed changes.
 
-### Removals
+### 删除
 
 *   Replace `ActionCable.startDebugging()` and `ActionCable.stopDebugging()`
     with `ActionCable.logger.enabled`.
     ([Pull Request](https://github.com/rails/rails/pull/34370))
 
-### Deprecations
+### 弃用
 
-*   There are no deprecations for Action Cable in Rails 6.0.
+*   There are no 弃用 for Action Cable in Rails 6.0.
 
-### Notable changes
+### 重要变化
 
 *   Add support for the `channel_prefix` option for PostgreSQL subscription adapters
     in `cable.yml`.
@@ -195,7 +188,7 @@ Action Pack
 
 Please refer to the [Changelog][action-pack] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove deprecated `fragment_cache_key` helper in favor of `combined_fragment_cache_key`.
     ([Commit](https://github.com/rails/rails/commit/e70d3df7c9b05c129b0fdcca57f66eca316c5cfc))
@@ -205,7 +198,7 @@ Please refer to the [Changelog][action-pack] for detailed changes.
     `#error?` in favor of `#server_error?`.
     ([Commit](https://github.com/rails/rails/commit/13ddc92e079e59a0b894e31bf5bb4fdecbd235d1))
 
-### Deprecations
+### 弃用
 
 *   Deprecate `ActionDispatch::Http::ParameterFilter` in favor of `ActiveSupport::ParameterFilter`.
     ([Pull Request](https://github.com/rails/rails/pull/34039))
@@ -213,7 +206,7 @@ Please refer to the [Changelog][action-pack] for detailed changes.
 *   Deprecate controller level `force_ssl` in favor of `config.force_ssl`.
     ([Pull Request](https://github.com/rails/rails/pull/32277))
 
-### Notable changes
+### 重要变化
 
 *   Change `ActionDispatch::Response#content_type` returning Content-Type
     header as it is.
@@ -278,7 +271,7 @@ Action View
 
 Please refer to the [Changelog][action-view] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove deprecated `image_alt` helper.
     ([Commit](https://github.com/rails/rails/commit/60c8a03c8d1e45e48fcb1055ba4c49ed3d5ff78f))
@@ -287,7 +280,7 @@ Please refer to the [Changelog][action-view] for detailed changes.
     was already moved to the `record_tag_helper` gem.
     ([Commit](https://github.com/rails/rails/commit/5c5ddd69b1e06fb6b2bcbb021e9b8dae17e7cb31))
 
-### Deprecations
+### 弃用
 
 *   Deprecate `ActionView::Template.finalize_compiled_template_methods` with
     no replacement.
@@ -300,7 +293,7 @@ Please refer to the [Changelog][action-view] for detailed changes.
 *   Deprecate calling private model methods from the `options_from_collection_for_select` view helper.
     ([Pull Request](https://github.com/rails/rails/pull/33547))
 
-### Notable changes
+### 重要变化
 
 *   Clear Action View cache in development only on file changes, speeding up
     development mode.
@@ -342,9 +335,9 @@ Action Mailer
 
 Please refer to the [Changelog][action-mailer] for detailed changes.
 
-### Removals
+### 删除
 
-### Deprecations
+### 弃用
 
 *   Deprecate `ActionMailer::Base.receive` in favor of Action Mailbox.
     ([Commit](https://github.com/rails/rails/commit/e3f832a7433a291a51c5df397dc3dd654c1858cb))
@@ -353,7 +346,7 @@ Please refer to the [Changelog][action-mailer] for detailed changes.
     `MailDeliveryJob`.
     ([Pull Request](https://github.com/rails/rails/pull/34591))
 
-### Notable changes
+### 重要变化
 
 *   Add `MailDeliveryJob` for delivering both regular and parameterized mail.
     ([Pull Request](https://github.com/rails/rails/pull/34591))
@@ -386,7 +379,7 @@ Active Record
 
 Please refer to the [Changelog][active-record] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove deprecated `#set_state` from the transaction object.
     ([Commit](https://github.com/rails/rails/commit/6c745b0c5152a4437163a67707e02f4464493983))
@@ -422,7 +415,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
     ([Commit](https://github.com/rails/rails/commit/27b252d6a85e300c7236d034d55ec8e44f57a83e))
 
 
-### Deprecations
+### 弃用
 
 *   Deprecate mismatched case-sensitivity collation comparisons for uniqueness validator.
     ([Commit](https://github.com/rails/rails/commit/9def05385f1cfa41924bb93daa187615e88c95b9))
@@ -447,7 +440,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 *   Deprecate `update_attributes`/`!` in favor of `update`/`!`.
     ([Commit](https://github.com/rails/rails/commit/5645149d3a27054450bd1130ff5715504638a5f5))
 
-### Notable changes
+### 重要变化
 
 *   Bump the minimum version of the `sqlite3` gem to 1.4.
     ([Pull Request](https://github.com/rails/rails/pull/35844))
@@ -480,7 +473,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 *   Add negative scopes for all enum values.
     ([Pull Request](https://github.com/rails/rails/pull/35381))
 
-*   Add `#destroy_by` and `#delete_by` for conditional removals.
+*   Add `#destroy_by` and `#delete_by` for conditional 删除.
     ([Pull Request](https://github.com/rails/rails/pull/35316))
 
 *   Add the ability to automatically switch database connections.
@@ -624,9 +617,9 @@ Active Storage
 
 Please refer to the [Changelog][active-storage] for detailed changes.
 
-### Removals
+### 删除
 
-### Deprecations
+### 弃用
 
 *   Deprecate  `config.active_storage.queue` in favor of `config.active_storage.queues.analysis`
     and `config.active_storage.queues.purge`.
@@ -643,7 +636,7 @@ Please refer to the [Changelog][active-storage] for detailed changes.
     without replacement.
     ([Commit](https://github.com/rails/rails/commit/697f4a93ad386f9fb7795f0ba68f815f16ebad0f))
 
-### Notable changes
+### 重要变化
 
 *   Add support for generating BMP image variants.
     ([Pull Request](https://github.com/rails/rails/pull/36051))
@@ -699,11 +692,11 @@ Active Model
 
 Please refer to the [Changelog][active-model] for detailed changes.
 
-### Removals
+### 删除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 *   Add a configuration option to customize format of the `ActiveModel::Errors#full_message`.
     ([Pull Request](https://github.com/rails/rails/pull/32956))
@@ -746,7 +739,7 @@ Active Support
 
 Please refer to the [Changelog][active-support] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove deprecated `#acronym_regex` method from `Inflections`.
     ([Commit](https://github.com/rails/rails/commit/0ce67d3cd6d1b7b9576b07fecae3dd5b422a5689))
@@ -757,7 +750,7 @@ Please refer to the [Changelog][active-support] for detailed changes.
 *   Remove `` Kernel#` `` without any replacement.
     ([Pull Request](https://github.com/rails/rails/pull/31253))
 
-### Deprecations
+### 弃用
 
 *   Deprecate using negative integer arguments for `String#first` and
     `String#last`.
@@ -782,7 +775,7 @@ Please refer to the [Changelog][active-support] for detailed changes.
     respectively.
     ([Pull Request](https://github.com/rails/rails/pull/34254))
 
-### Notable changes
+### 重要变化
 
 *   Add support for parallel testing.
     ([Pull Request](https://github.com/rails/rails/pull/31900))
@@ -943,14 +936,14 @@ Active Job
 
 Please refer to the [Changelog][active-job] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove support for Qu gem.
     ([Pull Request](https://github.com/rails/rails/pull/32300))
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 *   Add support for custom serializers for Active Job arguments.
     ([Pull Request](https://github.com/rails/rails/pull/30941))
@@ -1000,7 +993,7 @@ Ruby on Rails Guides
 
 Please refer to the [Changelog][guides] for detailed changes.
 
-### Notable changes
+### 重要变化
 
 *   Add Multiple Databases with Active Record guide.
     ([Pull Request](https://github.com/rails/rails/pull/36389))
@@ -1014,7 +1007,7 @@ Please refer to the [Changelog][guides] for detailed changes.
 *   Add Action Text Overview guide.
     ([Pull Request](https://github.com/rails/rails/pull/34878))
 
-Credits
+荣誉榜
 -------
 
 See the

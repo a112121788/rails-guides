@@ -16,5 +16,5 @@ RailsGuides::Generator.new(
   all:      env_flag["ALL"],
   only:     env_value["ONLY"],
   kindle:   env_flag["KINDLE"],
-  language: env_value["GUIDES_LANGUAGE"]
+  language: 'zh-CN'
 ).generate

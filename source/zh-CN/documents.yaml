@@ -194,6 +194,26 @@
       url: upgrading_ruby_on_rails.html
       description: 本篇帮助升级到 Ruby on Rails 最新版。
     -
+      name: Ruby on Rails 7.0 发布记
+      url: 7_0_release_notes.html
+      description: Rails 7.0 的发布说明。
+    -
+      name: Ruby on Rails 6.1 发布记
+      url: 6_1_release_notes.html
+      description: Rails 6.1 的发布说明。
+    -
+      name: Ruby on Rails 6.0 发布记
+      url: 6_0_release_notes.html
+      description: Rails 6.0 的发布说明。
+    -
+      name: Ruby on Rails 5.2 发布记
+      url: 5_2_release_notes.html
+      description: Rails 5.2 的发布说明。
+    -
+      name: Ruby on Rails 5.1 发布记
+      url: 5_1_release_note.html
+      description: Rails 5.1 的发布说明。
+    -
       name: Ruby on Rails 5.0 发布记
       url: 5_0_release_notes.html
       description: Rails 5.0 的发布说明。

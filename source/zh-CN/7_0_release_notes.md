@@ -1,170 +1,162 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+# Ruby on Rails 7.0 发布记
 
-Ruby on Rails 7.0 Release Notes
-===============================
-
-Highlights in Rails 7.0:
+Rails 7.0 的重要变化：
 
 * Ruby 2.7.0+ required, Ruby 3.0+ preferred
 
 --------------------------------------------------------------------------------
 
-Upgrading to Rails 7.0
+## 升级到 Rails 7.0
 ----------------------
 
-If you're upgrading an existing application, it's a great idea to have good test
-coverage before going in. You should also first upgrade to Rails 6.1 in case you
-haven't and make sure your application still runs as expected before attempting
-an update to Rails 7.0. A list of things to watch out for when upgrading is
-available in the
-[Upgrading Ruby on Rails](upgrading_ruby_on_rails.html#upgrading-from-rails-6-1-to-rails-7-0)
-guide.
+如果升级现有应用，在继续之前，最好确保有足够的测试覆盖度。如果尚未升级到 Rails 6.1，应该先升级到 6.1 版，确保应用能正常运行之后，再尝试升级到 Rails 6.1。升级时的注意事项参见 [从 Rails 6.1 升级到 7.0](upgrading_ruby_on_rails.html#upgrading-from-rails-6-1-to-rails-7-0)。
 
-Major Features
---------------
+<a class="anchor" id="major-features"></a>
+
+## 主要功能
 
 Railties
 --------
 
 Please refer to the [Changelog][railties] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Cable
 ------------
 
 Please refer to the [Changelog][action-cable] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Pack
 -----------
 
 Please refer to the [Changelog][action-pack] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action View
 -----------
 
 Please refer to the [Changelog][action-view] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Mailer
 -------------
 
 Please refer to the [Changelog][action-mailer] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Active Record
 -------------
 
 Please refer to the [Changelog][active-record] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `database` kwarg from `connected_to`.
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Active Storage
 --------------
 
 Please refer to the [Changelog][active-storage] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Active Model
 ------------
 
 Please refer to the [Changelog][active-model] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Active Support
 --------------
 
 Please refer to the [Changelog][active-support] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Active Job
 ----------
 
 Please refer to the [Changelog][active-job] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Text
 ----------
 
 Please refer to the [Changelog][action-text] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Mailbox
 ----------
 
 Please refer to the [Changelog][action-mailbox] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Ruby on Rails Guides
 --------------------
 
 Please refer to the [Changelog][guides] for detailed changes.
 
-### Notable changes
+### 重要变化
 
-Credits
+荣誉榜
 -------
 
 See the

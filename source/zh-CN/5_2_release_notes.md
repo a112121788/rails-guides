@@ -1,35 +1,26 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+# Ruby on Rails 5.2 发布记
 
-Ruby on Rails 5.2 Release Notes
-===============================
 
-Highlights in Rails 5.2:
+Rails 5.2 的重要变化：
 
 * Active Storage
-* Redis Cache Store
-* HTTP/2 Early Hints
-* Credentials
-* Content Security Policy
+* Redis 缓存存储
+* HTTP/2 早期提示
+* 凭证
+* 内容安全政策
 
-These release notes cover only the major changes. To learn about various bug
-fixes and changes, please refer to the change logs or check out the [list of
-commits](https://github.com/rails/rails/commits/5-2-stable) in the main Rails
-repository on GitHub.
+这些发行说明仅涵盖主要更改。要了解各种错误修复和更改，请参考更改日志或查看GitHub上主Rails存储库中的[提交列表](https://github.com/rails/rails/commits/5-2-stable)。
+
+
 
 --------------------------------------------------------------------------------
 
-Upgrading to Rails 5.2
+升级到Rails 5.2
 ----------------------
 
-If you're upgrading an existing application, it's a great idea to have good test
-coverage before going in. You should also first upgrade to Rails 5.1 in case you
-haven't and make sure your application still runs as expected before attempting
-an update to Rails 5.2. A list of things to watch out for when upgrading is
-available in the
-[Upgrading Ruby on Rails](upgrading_ruby_on_rails.html#upgrading-from-rails-5-1-to-rails-5-2)
-guide.
+如果要升级现有的应用程序，那么在进入之前进行良好的测试覆盖是一个好主意。如果还没有升级，还应该先升级到Rails 5.1，并确保应用程序仍按预期运行，然后再尝试更新到Rails 5.2。升级Ruby on Rails 指南中提供了升级时需要注意的事项列表 。
 
-Major Features
+主要特点
 --------------
 
 ### Active Storage
@@ -37,67 +28,49 @@ Major Features
 [Pull Request](https://github.com/rails/rails/pull/30020)
 
 [Active Storage](https://github.com/rails/rails/tree/5-2-stable/activestorage)
-facilitates uploading files to a cloud storage service like
-Amazon S3, Google Cloud Storage, or Microsoft Azure Storage and attaching
-those files to Active Record objects. It comes with a local disk-based service
-for development and testing and supports mirroring files to subordinate
-services for backups and migrations.
-You can read more about Active Storage in the
-[Active Storage Overview](active_storage_overview.html) guide.
+ 有助于将文件上传到Amazon S3，Google Cloud Storage或Microsoft Azure Storage之类的云存储服务，并将这些文件附加到Active Record对象。它带有用于开发和测试的基于本地磁盘的服务，并支持将文件镜像到从属服务以进行备份和迁移。您可以在[Active Storage 概述](active_storage_overview.html) 指南中阅读有关Active Storage的更多信息 。
 
-### Redis Cache Store
+### Redis缓存存储
 
 [Pull Request](https://github.com/rails/rails/pull/31134)
 
-Rails 5.2 ships with built-in Redis cache store.
-You can read more about this in the
-[Caching with Rails: An Overview](caching_with_rails.html#activesupport-cache-rediscachestore)
-guide.
+Rails 5.2带有内置的Redis缓存存储。您可以在
+[Caching with Rails: 概述](caching_with_rails.html#activesupport-cache-rediscachestore)
+指南中阅读有关此内容的更多信息 。
 
-### HTTP/2 Early Hints
+### HTTP/2 早期提示
 
 [Pull Request](https://github.com/rails/rails/pull/30744)
 
-Rails 5.2 supports [HTTP/2 Early Hints](https://tools.ietf.org/html/rfc8297).
-To start the server with Early Hints enabled pass `--early-hints`
-to `bin/rails server`.
+Rails 5.2支持 [HTTP/2 Early Hints](https://tools.ietf.org/html/rfc8297).
+要在启用“提早提示”的情况下启动服务器，请传递`--early-hints` 给bin/rails server。
 
-### Credentials
+### 凭证
 
 [Pull Request](https://github.com/rails/rails/pull/30067)
 
-Added `config/credentials.yml.enc` file to store production app secrets.
-It allows saving any authentication credentials for third-party services
-directly in repository encrypted with a key in the `config/master.key` file or
-the `RAILS_MASTER_KEY` environment variable.
-This will eventually replace `Rails.application.secrets` and the encrypted
-secrets introduced in Rails 5.1.
-Furthermore, Rails 5.2
+添加了config/credentials.yml.enc文件以存储生产应用程序的机密。它允许将第三方服务的任何身份验证凭据直接保存在使用config/master.key文件或RAILS_MASTER_KEY环境变量中的密钥加密的存储库中。这最终将取代Rails.application.secretsRails 5.1中引入的加密机密。此外，Rails 5.2 
 [opens API underlying Credentials](https://github.com/rails/rails/pull/30940),
-so you can easily deal with other encrypted configurations, keys, and files.
-You can read more about this in the
+因此您可以轻松处理其他加密的配置，密钥和文件。您可以在
 [Securing Rails Applications](security.html#custom-credentials)
-guide.
+指南中阅读有关此内容的更多信息 。
 
-### Content Security Policy
+### 内容安全政策
 
 [Pull Request](https://github.com/rails/rails/pull/31162)
 
-Rails 5.2 ships with a new DSL that allows you to configure a
+Rails 5.2附带了新的DSL，可让您为应用程序配置
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
-for your application. You can configure a global default policy and then
-override it on a per-resource basis and even use lambdas to inject per-request
-values into the header such as account subdomains in a multi-tenant application.
-You can read more about this in the
+您可以配置全局默认策略，然后在每个资源的基础上覆盖它，甚至可以使用lambda将每个请求的值注入标头（例如多租户应用程序中的帐户子域）。您可以在
 [Securing Rails Applications](security.html#content-security-policy)
-guide.
+指南中阅读有关此内容的更多信息 。
 
-Railties
+特技
 --------
 
-Please refer to the [Changelog][railties] for detailed changes.
+请参阅[Changelog][railties]以获取详细更改。
 
-### Deprecations
+### 弃用
 
 *   Deprecate `capify!` method in generators and templates.
     ([Pull Request](https://github.com/rails/rails/pull/29493))
@@ -113,7 +86,7 @@ Please refer to the [Changelog][railties] for detailed changes.
 *   Deprecate `after_bundle` callback in Rails plugin templates.
     ([Pull Request](https://github.com/rails/rails/pull/29446))
 
-### Notable changes
+### 重要变化
 
 *   Added a shared section to `config/database.yml` that will be loaded for
     all environments.
@@ -189,12 +162,12 @@ Action Cable
 
 Please refer to the [Changelog][action-cable] for detailed changes.
 
-### Removals
+### 删除
 
 *   Removed deprecated evented redis adapter.
     ([Commit](https://github.com/rails/rails/commit/48766e32d31651606b9f68a16015ad05c3b0de2c))
 
-### Notable changes
+### 值得注意的变化
 
 *   Add support for `host`, `port`, `db` and `password` options in cable.yml
     ([Pull Request](https://github.com/rails/rails/pull/29528))
@@ -207,18 +180,18 @@ Action Pack
 
 Please refer to the [Changelog][action-pack] for detailed changes.
 
-### Removals
+### 删除
 
 *   Remove deprecated `ActionController::ParamsParser::ParseError`.
     ([Commit](https://github.com/rails/rails/commit/e16c765ac6dcff068ff2e5554d69ff345c003de1))
 
-### Deprecations
+### 弃用
 
 *   Deprecate `#success?`, `#missing?` and `#error?` aliases of
     `ActionDispatch::TestResponse`.
     ([Pull Request](https://github.com/rails/rails/pull/30104))
 
-### Notable changes
+### 重要变化
 
 *   Add support for recyclable cache keys with fragment caching.
     ([Pull Request](https://github.com/rails/rails/pull/29092))
@@ -302,18 +275,18 @@ Action View
 
 Please refer to the [Changelog][action-view] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated Erubis ERB handler.
     ([Commit](https://github.com/rails/rails/commit/7de7f12fd140a60134defe7dc55b5a20b2372d06))
 
-### Deprecations
+### 启用
 
 *   Deprecate `image_alt` helper which used to add default alt text to
     the images generated by `image_tag`.
     ([Pull Request](https://github.com/rails/rails/pull/30213))
 
-### Notable changes
+### 重要变化
 
 *   Add `:json` type to `auto_discovery_link_tag` to support
     [JSON Feeds](https://jsonfeed.org/version/1).
@@ -340,7 +313,7 @@ Action Mailer
 
 Please refer to the [Changelog][action-mailer] for detailed changes.
 
-### Notable changes
+### 重要变化
 
 *   Allow Action Mailer classes to configure their delivery job.
     ([Pull Request](https://github.com/rails/rails/pull/29457))
@@ -353,7 +326,7 @@ Active Record
 
 Please refer to the [Changelog][active-record] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `#migration_keys`.
     ([Pull Request](https://github.com/rails/rails/pull/30337))
@@ -398,7 +371,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 *   Remove deprecated method `#sanitize_conditions`.
     ([Commit](https://github.com/rails/rails/commit/8f5413b896099f80ef46a97819fe47a820417bc2))
 
-### Deprecations
+### 启用
 
 *   Deprecate `supports_statement_cache?`.
     ([Pull Request](https://github.com/rails/rails/pull/28938))
@@ -416,7 +389,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 *   Deprecate `expand_hash_conditions_for_aggregates` without replacement.
     ([Commit](https://github.com/rails/rails/commit/7ae26885d96daee3809d0bd50b1a440c2f5ffb69))
 
-### Notable changes
+### 重要变化
 
 *   When calling the dynamic fixture accessor method with no arguments, it now
     returns all fixtures of this type. Previously this method always returned
@@ -624,7 +597,7 @@ Active Model
 
 Please refer to the [Changelog][active-model] for detailed changes.
 
-### Notable changes
+### 重要变化
 
 *   Fix methods `#keys`, `#values` in `ActiveModel::Errors`.
     Change `#keys` to only return the keys that don't have empty messages.
@@ -652,7 +625,7 @@ Active Support
 
 Please refer to the [Changelog][active-support] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `:if` and `:unless` string filter for callbacks.
     ([Commit](https://github.com/rails/rails/commit/c792354adcbf8c966f274915c605c6713b840548))
@@ -660,7 +633,7 @@ Please refer to the [Changelog][active-support] for detailed changes.
 *   Remove deprecated `halt_callback_chains_on_return_false` option.
     ([Commit](https://github.com/rails/rails/commit/19fbbebb1665e482d76cae30166b46e74ceafe29))
 
-### Deprecations
+### 弃用
 
 *   Deprecate `Module#reachable?` method.
     ([Pull Request](https://github.com/rails/rails/pull/30624))
@@ -668,7 +641,7 @@ Please refer to the [Changelog][active-support] for detailed changes.
 *   Deprecate `secrets.secret_token`.
     ([Commit](https://github.com/rails/rails/commit/fbcc4bfe9a211e219da5d0bb01d894fcdaef0a0e))
 
-### Notable changes
+### 重要变化
 
 *   Add `fetch_values` for `HashWithIndifferentAccess`.
     ([Pull Request](https://github.com/rails/rails/pull/28316))
@@ -824,7 +797,7 @@ Active Job
 
 Please refer to the [Changelog][active-job] for detailed changes.
 
-### Notable changes
+### 重要变化
 
 *   Allow block to be passed to `ActiveJob::Base.discard_on` to allow custom
     handling of discard jobs.
@@ -835,7 +808,7 @@ Ruby on Rails Guides
 
 Please refer to the [Changelog][guides] for detailed changes.
 
-### Notable changes
+### 重要变化
 
 *   Add
     [Threading and Code Execution in Rails](threading_and_code_execution.html)
@@ -845,7 +818,7 @@ Please refer to the [Changelog][guides] for detailed changes.
 *   Add [Active Storage Overview](active_storage_overview.html) Guide.
     ([Pull Request](https://github.com/rails/rails/pull/31037))
 
-Credits
+荣誉榜
 -------
 
 See the

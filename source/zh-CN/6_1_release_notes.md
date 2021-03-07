@@ -1,9 +1,7 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
+# Ruby on Rails 6.1 发布记
 
-Ruby on Rails 6.1 Release Notes
-===============================
+Rails 6.1 的重要变化：
 
-Highlights in Rails 6.1:
 
 * Per-database Connection Switching
 * Horizontal Sharding
@@ -11,26 +9,19 @@ Highlights in Rails 6.1:
 * Delegated Types
 * Destroy Associations Async
 
-These release notes cover only the major changes. To learn about various bug
-fixes and changes, please refer to the change logs or check out the [list of
-commits](https://github.com/rails/rails/commits/6-1-stable) in the main Rails
-repository on GitHub.
+本文只涵盖重要变化。若想了解缺陷修正和具体变化，请查看更新日志或 GitHub 中 Rails 主仓库的[提交历史](https://github.com/rails/rails/commits/6-1-stable)。
 
 --------------------------------------------------------------------------------
 
-Upgrading to Rails 6.1
-----------------------
+<a class="anchor" id="upgrading-to-rails-6-1"></a>
 
-If you're upgrading an existing application, it's a great idea to have good test
-coverage before going in. You should also first upgrade to Rails 6.0 in case you
-haven't and make sure your application still runs as expected before attempting
-an update to Rails 6.1. A list of things to watch out for when upgrading is
-available in the
-[Upgrading Ruby on Rails](upgrading_ruby_on_rails.html#upgrading-from-rails-6-0-to-rails-6-1)
-guide.
+## 升级到 Rails 6.1
 
-Major Features
---------------
+如果升级现有应用，在继续之前，最好确保有足够的测试覆盖度。如果尚未升级到 Rails 6.0，应该先升级到 6.0 版，确保应用能正常运行之后，再尝试升级到 Rails 5.1。升级时的注意事项参见 [从 Rails 6.0 升级到 6.1](upgrading_ruby_on_rails.html#upgrading-from-rails-5-0-to-rails-5-1)。
+
+<a class="anchor" id="major-features"></a>
+
+## 主要功能
 
 ### Per-database Connection Switching
 
@@ -58,7 +49,7 @@ Railties
 
 Please refer to the [Changelog][railties] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `rake notes` tasks.
 
@@ -76,37 +67,37 @@ Please refer to the [Changelog][railties] for detailed changes.
 
 *   Remove deprecated `rake initializers` tasks.
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Cable
 ------------
 
 Please refer to the [Changelog][action-cable] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Action Pack
 -----------
 
 Please refer to the [Changelog][action-pack] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `ActionDispatch::Http::ParameterFilter`.
 
 *   Remove deprecated `force_ssl` at the controller level.
 
-### Deprecations
+### 弃用
 
 *   Deprecate `config.action_dispatch.return_only_media_type_on_content_type`.
 
-### Notable changes
+### 重要变化
 
 *   Change `ActionDispatch::Response#content_type` to return the full Content-Type header.
 
@@ -115,7 +106,7 @@ Action View
 
 Please refer to the [Changelog][action-view] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `escape_whitelist` from `ActionView::Template::Handlers::ERB`.
 
@@ -168,9 +159,9 @@ Please refer to the [Changelog][action-view] for detailed changes.
 
 *   Remove deprecated support to call private methods from object in some view helpers.
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 *   Require that `ActionView::Base` subclasses implement `#compiled_method_container`.
 
@@ -183,20 +174,20 @@ Action Mailer
 
 Please refer to the [Changelog][action-mailer] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated `ActionMailer::Base.receive` in favor of [Action Mailbox](https://github.com/rails/rails/tree/6-1-stable/actionmailbox).
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Active Record
 -------------
 
 Please refer to the [Changelog][active-record] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated methods from `ActiveRecord::ConnectionAdapters::DatabaseLimits`.
 
@@ -233,7 +224,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 
 *   Remove deprecated support for using unsafe raw SQL in `ActiveRecord::Relation` methods.
 
-### Deprecations
+### 弃用
 
 *   Deprecate `ActiveRecord::Base.allow_unsafe_raw_sql`.
 
@@ -241,7 +232,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 
 *   Deprecate `connection_handlers` when `legacy_connection_handling` is set to false.
 
-### Notable changes
+### 重要变化
 
 *   MySQL: Uniqueness validator now respects default database collation,
     no longer enforce case sensitive comparison by default.
@@ -313,7 +304,7 @@ Active Storage
 
 Please refer to the [Changelog][active-storage] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated support to pass `:combine_options` operations to `ActiveStorage::Transformers::ImageProcessing`.
 
@@ -323,12 +314,12 @@ Please refer to the [Changelog][active-storage] for detailed changes.
 
 *   Remove deprecated `ActiveStorage::Downloading`.
 
-### Deprecations
+### 弃用
 
 *   Deprecate `Blob.create_after_upload` in favor of `Blob.create_and_upload`.
     ([Pull Request](https://github.com/rails/rails/pull/34827))
 
-### Notable changes
+### 重要变化
 
 *   Add `Blob.create_and_upload` to create a new blob and upload the given `io`
     to the service.
@@ -340,11 +331,11 @@ Active Model
 
 Please refer to the [Changelog][active-model] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 *   Active Model's errors are now objects with an interface that allows your application to more
     easily handle and interact with errors thrown by models.
@@ -356,7 +347,7 @@ Active Support
 
 Please refer to the [Changelog][active-support] for detailed changes.
 
-### Removals
+### 移除
 
 *   Remove deprecated fallback to `I18n.default_local` when `config.i18n.fallbacks` is empty.
 
@@ -388,24 +379,24 @@ Please refer to the [Changelog][active-support] for detailed changes.
 
 *   Remove deprecated `ActiveSupport::Notifications::Instrumenter#end=`.
 
-### Deprecations
+### 弃用
 
 *   Deprecate `ActiveSupport::Multibyte::Unicode.default_normalization_form`.
 
-### Notable changes
+### 重要变化
 
 Active Job
 ----------
 
 Please refer to the [Changelog][active-job] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
 *   Deprecate `config.active_job.return_false_on_aborted_enqueue`.
 
-### Notable changes
+### 重要变化
 
 *   Return `false` when enqueuing a job is aborted.
 
@@ -414,11 +405,11 @@ Action Text
 
 Please refer to the [Changelog][action-text] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 *   Add method to confirm rich text content existence by adding `?` after
     name of the rich text attribute.
@@ -437,20 +428,20 @@ Action Mailbox
 
 Please refer to the [Changelog][action-mailbox] for detailed changes.
 
-### Removals
+### 移除
 
-### Deprecations
+### 弃用
 
-### Notable changes
+### 重要变化
 
 Ruby on Rails Guides
 --------------------
 
 Please refer to the [Changelog][guides] for detailed changes.
 
-### Notable changes
+### 重要变化
 
-Credits
+荣誉榜
 -------
 
 See the
