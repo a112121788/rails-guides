@@ -36,7 +36,7 @@
       name: Active Model 基础
       url: active_model_basics.html
       description: 本篇介绍如何使用 Active Model。
-      work_in_progress: true
+      work_in_progress: false
 -
   name: 视图
   documents:
@@ -44,7 +44,7 @@
       name: Action View 概述
       url: action_view_overview.html
       description: 本篇介绍 Action View 和常用辅助方法。
-      work_in_progress: true
+      work_in_progress: false
     -
       name: Rails 布局和视图渲染
       url: layouts_and_rendering.html
@@ -84,6 +84,11 @@
       url: active_job_basics.html
       description: 本篇提供创建背景任务、任务排程以及执行任务的所有知识。
     -
+      name: Active Storage 基础
+      url: active_storage_overview.html
+      description: 本指南介绍如何将文件附加到 Active Record。
+    
+    -
       name: Rails 应用测试指南
       url: testing.html
       description: 这是 Rails 中测试设施的综合指南。它涵盖了从“什么是测试？”到集成测试的知识。
@@ -113,7 +118,7 @@
       description: 本篇介绍 Rails 内置的 Ajax 与 JavaScript 功能。
     -
       name: Rails 初始化过程
-      work_in_progress: true
+      work_in_progress: false
       url: initialization.html
       description: 本篇介绍 Rails 内部初始化过程。
     -
@@ -126,12 +131,12 @@
       description: 本篇介绍如何通过缓存给 Rails 应用提速。
     -
       name: Active Support 监测程序
-      work_in_progress: true
+      work_in_progress: false
       url: active_support_instrumentation.html
       description: 本篇介绍如何通过 Active Support 监测 API 观察 Rails 和其他 Ruby 代码的事件。
     -
       name: Rails 应用分析指南
-      work_in_progress: true
+      work_in_progress: false
       url: profiling.html
       description: 本篇介绍如何分析 Rails 应用并提高性能。
     -
@@ -148,7 +153,7 @@
   documents:
     -
       name: Rails 插件开发简介
-      work_in_progress: true
+      work_in_progress: false
       url: plugins.html
       description: 本篇介绍如何开发插件扩展 Rails 的功能。
     -
@@ -163,7 +168,13 @@
       name: 引擎入门
       url: engines.html
       description: 本篇介绍如何编写可挂载的引擎。
-      work_in_progress: true
+      work_in_progress: false
+    -
+      name: Rails中的线程和代码执行
+      url: threading_and_code_execution.html
+      description: 本指南描述了在Rails应用程序中直接处理并发时需要考虑的事项和可用的工具。
+      work_in_progress: false
+
 -
   name: 为 Ruby on Rails 做贡献
   documents:
