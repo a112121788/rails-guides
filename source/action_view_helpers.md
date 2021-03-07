@@ -103,7 +103,7 @@ Returns a stylesheet link tag for the sources specified as arguments. If you don
 
 ```ruby
 stylesheet_link_tag "application"
-# => <link href="/assets/application.css" media="screen" rel="stylesheet" />
+# => <link href="/assets/application.css" rel="stylesheet" />
 ```
 
 #### stylesheet_path
@@ -331,6 +331,15 @@ Formats a number into a currency string (e.g., $13.65).
 
 ```ruby
 number_to_currency(1234567890.50) # => $1,234,567,890.50
+```
+
+#### number_to_human
+
+Pretty prints (formats and approximates) a number so it is more readable by users; useful for numbers that can get very large.
+
+```ruby
+number_to_human(1234)    # => 1.23 Thousand
+number_to_human(1234567) # => 1.23 Million
 ```
 
 #### number_to_human_size

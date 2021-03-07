@@ -605,7 +605,7 @@ Defaults to `'signed cookie'`.
   the older AES-256-CBC cipher. It defaults to `true`.
 
 * `config.action_dispatch.use_cookies_with_metadata` enables writing
-  cookies with the purpose and expiry metadata embedded. It defaults to `true`.
+  cookies with the purpose metadata embedded. It defaults to `true`.
 
 * `config.action_dispatch.perform_deep_munge` configures whether `deep_munge`
   method should be performed on the parameters. See [Security Guide](security.html#unsafe-query-generation)
@@ -653,6 +653,10 @@ Defaults to `'signed cookie'`.
     ```
 
     Any exceptions that are not configured will be mapped to 500 Internal Server Error.
+
+* `config.action_dispatch.return_only_request_media_type_on_content_type` change the
+  return value of `ActionDispatch::Request#content_type` to the Content-Type
+  header without modification.
 
 * `config.action_dispatch.cookies_same_site_protection` configures the default
   value of the `SameSite` attribute when setting cookies. When set to `nil`, the
@@ -726,9 +730,17 @@ Defaults to `'signed cookie'`.
 
 * `config.action_view.default_enforce_utf8` determines whether forms are generated with a hidden tag that forces older versions of Internet Explorer to submit forms encoded in UTF-8. This defaults to `false`.
 
+* `config.action_view.image_loading` specifies a default value for the `loading` attribute of `<img>` tags rendered by the `image_tag` helper. For example, when set to `"lazy"`, `<img>` tags rendered by `image_tag` will include `loading="lazy"`, which [instructs the browser to wait until an image is near the viewport to load it](https://html.spec.whatwg.org/#lazy-loading-attributes). (This value can still be overridden per image by passing e.g. `loading: "eager"` to `image_tag`.) Defaults to `nil`.
+
+* `config.action_view.image_decoding` specifies a default value for the `decoding` attribute of `<img>` tags rendered by the `image_tag` helper. Defaults to `nil`.
+
 * `config.action_view.annotate_rendered_view_with_filenames` determines whether to annotate rendered view with template file names. This defaults to `false`.
 
 * `config.action_view.preload_links_header` determines whether `javascript_include_tag` and `stylesheet_link_tag` will generate a `Link` header that preload assets.
+
+* `config.action_view.button_to_generates_button_tag` determines whether `button_to` will render `<button>` element, regardless of whether or not the content is passed as the first argument or as a block.
+
+* `config.action_view.apply_stylesheet_media_default` determines whether `stylesheet_link_tag` will render `screen` as the default value for the attribute `media` when it's not provided.
 
 ### Configuring Action Mailbox
 
@@ -848,6 +860,8 @@ There are a few configuration options available in Active Support:
 * `config.active_support.time_precision` sets the precision of JSON encoded time values. Defaults to `3`.
 
 * `config.active_support.hash_digest_class` allows configuring the digest class to use to generate non-sensitive digests, such as the ETag header.
+
+* `config.active_support.key_generator_hash_digest_class` allows configuring the digest class to use to derive secrets from the configured secret base, such as for encrypted cookies.
 
 * `config.active_support.use_authenticated_message_encryption` specifies whether to use AES-256-GCM authenticated encryption as the default cipher for encrypting messages instead of AES-256-CBC.
 
@@ -1029,9 +1043,20 @@ text/javascript image/svg+xml application/postscript application/x-shockwave-fla
 
     The default is `:rails_storage_redirect`.
 
+### Configuring Action Text
+
+* `config.action_text.attachment_tag_name` accepts a string for the HTML tag used to wrap attachments. Defaults to `"action-text-attachment"`.
+
 ### Results of `config.load_defaults`
 
 `config.load_defaults` sets new defaults up to and including the version passed. Such that passing, say, `6.0` also gets the new defaults from every version before it.
+
+#### For '7.0', defaults from previous versions below and:
+- `config.action_view.button_to_generates_button_tag`: `true`
+- `config.action_view.apply_stylesheet_media_default` : `false`
+- `config.active_support.key_generator_hash_digest_class`: `OpenSSL::Digest::SHA256`
+- `config.active_support.hash_digest_class`: `OpenSSL::Digest::SHA256`
+- `config.action_dispatch.return_only_request_media_type_on_content_type`: `false`
 
 #### For '6.1', defaults from previous versions below and:
 
@@ -1068,7 +1093,7 @@ text/javascript image/svg+xml application/postscript application/x-shockwave-fla
 - `config.active_record.cache_versioning`: `true`
 - `config.action_dispatch.use_authenticated_cookie_encryption`: `true`
 - `config.active_support.use_authenticated_message_encryption`: `true`
-- `config.active_support.hash_digest_class`: `::Digest::SHA1`
+- `config.active_support.hash_digest_class`: `OpenSSL::Digest::SHA1`
 - `config.action_controller.default_protect_from_forgery`: `true`
 - `config.action_view.form_with_generates_ids`: `true`
 
@@ -1093,6 +1118,8 @@ text/javascript image/svg+xml application/postscript application/x-shockwave-fla
 - `config.action_mailer.delivery_job`: `ActionMailer::DeliveryJob`
 - `config.action_view.form_with_generates_ids`: `false`
 - `config.action_view.preload_links_header`: `nil`
+- `config.action_view.button_to_generates_button_tag`: `false`
+- `config.action_view.apply_stylesheet_media_default` : `true`
 - `config.active_job.retry_jitter`: `0.0`
 - `config.active_job.skip_after_callbacks_if_terminated`: `false`
 - `config.action_mailbox.queues.incineration`: `:action_mailbox_incineration`
@@ -1103,7 +1130,9 @@ text/javascript image/svg+xml application/postscript application/x-shockwave-fla
 - `config.active_record.has_many_inversing`: `false`
 - `config.active_record.legacy_connection_handling`: `true`
 - `config.active_support.use_authenticated_message_encryption`: `false`
-- `config.active_support.hash_digest_class`: `::Digest::MD5`
+- `config.active_support.hash_digest_class`: `OpenSSL::Digest::MD5`
+- `config.active_support.key_generator_hash_digest_class`: `OpenSSL::Digest::SHA1`
+- `config.action_dispatch.return_only_request_media_type_on_content_type`: `true`
 - `ActiveSupport.utc_to_local_returns_utc_offset_times`: `false`
 
 ### Configuring a Database
@@ -1538,7 +1567,7 @@ The `initializer` method takes three arguments with the first being the name for
 
 Initializers defined using the `initializer` method will be run in the order they are defined in, with the exception of ones that use the `:before` or `:after` methods.
 
-WARNING: You may put your initializer before or after any other initializer in the chain, as long as it is logical. Say you have 4 initializers called "one" through "four" (defined in that order) and you define "four" to go _before_ "four" but _after_ "three", that just isn't logical and Rails will not be able to determine your initializer order.
+WARNING: You may put your initializer before or after any other initializer in the chain, as long as it is logical. Say you have 4 initializers called "one" through "four" (defined in that order) and you define "four" to go _before_ "two" but _after_ "three", that just isn't logical and Rails will not be able to determine your initializer order.
 
 The block argument of the `initializer` method is the instance of the application itself, and so we can access the configuration on it by using the `config` method as done in the example.
 
@@ -1576,7 +1605,7 @@ Below is a comprehensive list of all the initializers found in Rails in the orde
 
 * `action_view.set_configs`: Sets up Action View by using the settings in `config.action_view` by `send`'ing the method names as setters to `ActionView::Base` and passing the values through.
 
-* `action_controller.assets_config`: Initializes the `config.actions_controller.assets_dir` to the app's public directory if not explicitly configured.
+* `action_controller.assets_config`: Initializes the `config.action_controller.assets_dir` to the app's public directory if not explicitly configured.
 
 * `action_controller.set_helpers_path`: Sets Action Controller's `helpers_path` to the application's `helpers_path`.
 
@@ -1711,7 +1740,7 @@ Rails.configuration.super_debugger                # => true
 You can also use `Rails::Application.config_for` to load whole configuration files:
 
 ```yaml
-# config/payment.yml:
+# config/payment.yml
 production:
   environment: production
   merchant_id: production_merchant_id

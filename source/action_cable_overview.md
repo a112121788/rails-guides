@@ -373,7 +373,6 @@ these channel subscriptions based on an identifier sent by the cable consumer.
 
 ```js
 // app/javascript/channels/chat_channel.js
-// Assumes you've already requested the right to send web notifications
 import consumer from "./consumer"
 
 consumer.subscriptions.create({ channel: "ChatChannel", room: "Best Room" }, {
@@ -492,8 +491,8 @@ you subscribed to the channel.
 
 The following setup steps are common to both examples:
 
-  1. [Setup your connection](#connection-setup).
-  2. [Setup your parent channel](#parent-channel-setup).
+  1. [Set up your connection](#connection-setup).
+  2. [Set up your parent channel](#parent-channel-setup).
   3. [Connect your consumer](#connect-consumer).
 
 ### Example 1: User Appearances
@@ -702,7 +701,7 @@ development:
   adapter: async
 
 test:
-  adapter: async
+  adapter: test
 
 production:
   adapter: redis
@@ -818,8 +817,8 @@ server if `action_cable_meta_tag` is invoked in the layout. Otherwise, A path is
 specified as first argument to `createConsumer` (e.g. `ActionCable.createConsumer("/websocket")`).
 
 For every instance of your server you create and for every worker your server
-spawns, you will also have a new instance of Action Cable, but the use of Redis
-keeps messages synced across connections.
+spawns, you will also have a new instance of Action Cable, but the Redis or
+PostgreSQL adapter keeps messages synced across connections.
 
 ### Standalone
 

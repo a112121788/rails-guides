@@ -50,7 +50,7 @@ The `database.yml` looks like this:
 production:
   database: my_primary_database
   user: root
-  adapter: mysql
+  adapter: mysql2
 ```
 
 Let's add a replica for the first configuration, and a second database called animals and a
@@ -68,21 +68,21 @@ production:
   primary:
     database: my_primary_database
     user: root
-    adapter: mysql
+    adapter: mysql2
   primary_replica:
     database: my_primary_database
     user: root_readonly
-    adapter: mysql
+    adapter: mysql2
     replica: true
   animals:
     database: my_animals_database
     user: animals_root
-    adapter: mysql
+    adapter: mysql2
     migrations_paths: db/animals_migrate
   animals_replica:
     database: my_animals_database
     user: animals_readonly
-    adapter: mysql
+    adapter: mysql2
     replica: true
 ```
 
@@ -123,8 +123,18 @@ class ApplicationRecord < ActiveRecord::Base
 end
 ```
 
-Classes that connect to primary/primary_replica can inherit from `ApplicationRecord` like
-standard Rails applications:
+If you use a differently named class for your application record you need to
+set `primary_abstract_class` instead, so that Rails knows which class `ActiveRecord::Base`
+should share a connection with.
+
+```
+class PrimaryApplicationRecord < ActiveRecord::Base
+  self.primary_abstract_class
+end
+```
+
+Classes that connect to primary/primary_replica can inherit from your primary abstract
+class like standard Rails applications:
 
 ```ruby
 class Person < ApplicationRecord
@@ -328,17 +338,17 @@ Shards are declared in the three-tier config like this:
 production:
   primary:
     database: my_primary_database
-    adapter: mysql
+    adapter: mysql2
   primary_replica:
     database: my_primary_database
-    adapter: mysql
+    adapter: mysql2
     replica: true
   primary_shard_one:
     database: my_primary_shard_one
-    adapter: mysql
+    adapter: mysql2
   primary_shard_one_replica:
     database: my_primary_shard_one
-    adapter: mysql
+    adapter: mysql2
     replica: true
 ```
 
