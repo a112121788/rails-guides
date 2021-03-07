@@ -65,21 +65,27 @@
       url: routing.html
       description: 本篇介绍与使用者息息相关的路由功能。想了解如何使用 Rails 的路由，从这里开始。
 -
-  name: 深入探索
+  name: 其他模块
   documents:
     -
       name: Active Support 核心扩展
       url: active_support_core_extensions.html
       description: 本篇介绍由 Active Support 定义的核心扩展功能。
     -
-      name: Rails 国际化 API
-      url: i18n.html
-      description: 本篇介绍如何国际化应用程序。将应用程序翻译成多种语言、更改单复数规则、对不同的国家使用正确的日期格式等。
-    -
       name: Action Mailer 基础
       url: action_mailer_basics.html
       description: 本篇介绍如何使用 Action Mailer 来收发信件。
     -
+      name: Action Mailbox 基础
+      work_in_progress: true
+      url: action_mailbox_basics.html
+      description: This guide describes how to use Action Mailbox to receive emails.
+    -
+      name: Action Text 基础
+      work_in_progress: true
+      url: action_text_overview.html
+      description: This guide describes how to use Action Text to handle rich text content.
+    -    
       name: Active Job 基础
       url: active_job_basics.html
       description: 本篇提供创建背景任务、任务排程以及执行任务的所有知识。
@@ -87,7 +93,18 @@
       name: Active Storage 基础
       url: active_storage_overview.html
       description: 本指南介绍如何将文件附加到 Active Record。
-    
+    -
+      name: Action Cable 概览
+      url: action_cable_overview.html
+      description: 本篇介绍 Action Cable 如何工作，以及如何使用 WebSockets 创建实时功能。
+
+-
+  name: 深入探索
+  documents:
+    -
+      name: Rails 国际化 API
+      url: i18n.html
+      description: 本篇介绍如何国际化应用程序。将应用程序翻译成多种语言、更改单复数规则、对不同的国家使用正确的日期格式等。
     -
       name: Rails 应用测试指南
       url: testing.html
@@ -131,7 +148,6 @@
       description: 本篇介绍如何通过缓存给 Rails 应用提速。
     -
       name: Active Support 监测程序
-      work_in_progress: false
       url: active_support_instrumentation.html
       description: 本篇介绍如何通过 Active Support 监测 API 观察 Rails 和其他 Ruby 代码的事件。
     -
@@ -144,9 +160,15 @@
       url: api_app.html
       description: 本篇介绍如何将 Rails 用于只提供 API 的应用。
     -
-      name: Action Cable 概览
-      url: action_cable_overview.html
-      description: 本篇介绍 Action Cable 如何工作，以及如何使用 WebSockets 创建实时功能。
+      name: Active Record and PostgreSQL
+      work_in_progress: true
+      url: active_record_postgresql.html
+      description: This guide covers PostgreSQL specific usage of Active Record.
+    -
+      name: Multiple Databases with Active Record
+      work_in_progress: true
+      url: active_record_multiple_databases.html
+      description: This guide covers using multiple databases in your application.
 
 -
   name: 扩展 Rails
