@@ -3,4 +3,4 @@ source 'https://rubygems.org'
 
 gem 'rails', '5.2.4.5'
 gem 'redcarpet'
-gem 'kindlerb', '1.2.0'
+gem 'kindlerb'
