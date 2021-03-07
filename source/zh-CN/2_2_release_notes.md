@@ -1,6 +1,4 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Ruby on Rails 2.2 Release Notes
+Ruby on Rails 2.2 发布记
 ===============================
 
 Rails 2.2 delivers a number of new and improved features. This list covers the major upgrades, but doesn't include every little bug fix and change. If you want to see everything, check out the [list of commits](http://github.com/rails/rails/commits/2-2-stable) in the main Rails repository on GitHub.

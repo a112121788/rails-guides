@@ -1,9 +1,7 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Ruby on Rails 4.2 Release Notes
+Ruby on Rails 4.2 发布记
 ===============================
 
-Highlights in Rails 4.2:
+Rails 4.2 的重要变化：
 
 * Active Job
 * Asynchronous mails

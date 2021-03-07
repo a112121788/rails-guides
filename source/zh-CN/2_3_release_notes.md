@@ -1,6 +1,4 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Ruby on Rails 2.3 Release Notes
+Ruby on Rails 2.3 发布记
 ===============================
 
 Rails 2.3 delivers a variety of new and improved features, including pervasive Rack integration, refreshed support for Rails Engines, nested transactions for Active Record, dynamic and default scopes, unified rendering, more efficient routing, application templates, and quiet backtraces. This list covers the major upgrades, but doesn't include every little bug fix and change. If you want to see everything, check out the [list of commits](http://github.com/rails/rails/commits/2-3-stable) in the main Rails repository on GitHub or review the `CHANGELOG` files for the individual Rails components.

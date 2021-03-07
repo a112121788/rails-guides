@@ -1,11 +1,9 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Active Record and PostgreSQL
+Active Record 和 PostgreSQL
 ============================
 
-This guide covers PostgreSQL specific usage of Active Record.
+本指南介绍了活动记录的PostgreSQL特定用法。
 
-After reading this guide, you will know:
+读完本文后，您将学到：
 
 * How to use PostgreSQL's datatypes.
 * How to use UUID primary keys.

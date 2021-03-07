@@ -1,6 +1,6 @@
 # Ruby on Rails 5.1 发布记
 
-Rails 5.1 的重要变化：
+Rails 5.1的重要变化：
 
 *   支持 Yarn
 *   支持 Webpack（可选）

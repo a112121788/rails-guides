@@ -1,12 +1,9 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
-
-Action Text Overview
+Action Text 概览
 ====================
 
-This guide provides you with all you need to get started in handling
-rich text content.
+本指南为您提供了开始处理富文本内容所需的一切。
 
-After reading this guide, you will know:
+读完本文后，您将学到：
 
 * How to configure Action Text.
 * How to handle rich text content.

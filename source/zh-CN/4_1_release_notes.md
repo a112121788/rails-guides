@@ -1,9 +1,7 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Ruby on Rails 4.1 Release Notes
+Ruby on Rails 4.1 发布记
 ===============================
 
-Highlights in Rails 4.1:
+Rails 4.1 的重要变化：
 
 * Spring application preloader
 * `config/secrets.yml`

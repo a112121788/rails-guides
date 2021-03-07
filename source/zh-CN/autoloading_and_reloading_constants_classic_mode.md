@@ -1,11 +1,9 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
-
-Autoloading and Reloading Constants (Classic Mode)
+自动加载和重新加载常量（经典模式）
 ==================================================
 
-This guide documents how constant autoloading and reloading works in `classic` mode.
+本指南记录了如何在“经典”模式下持续自动加载和重新加载。
 
-After reading this guide, you will know:
+读完本文后，您将学到：
 
 * Key aspects of Ruby constants
 * What are the `autoload_paths` and how does eager loading work in production?
@@ -17,7 +15,7 @@ After reading this guide, you will know:
 --------------------------------------------------------------------------------
 
 
-Introduction
+简介
 ------------
 
 INFO. This guide documents autoloading in `classic` mode, which is the traditional one. If you'd like to read about `zeiwerk` mode instead, the new one in Rails 6, please check [Autoloading and Reloading Constants (Zeitwerk Mode)](autoloading_and_reloading_constants.html).

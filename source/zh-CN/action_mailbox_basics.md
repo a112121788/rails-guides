@@ -1,12 +1,9 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
-
-Action Mailbox Basics
+Action Mailbox 基础
 =====================
 
-This guide provides you with all you need to get started in receiving
-emails to your application.
+本指南为您提供了开始接收应用程序电子邮件所需的一切。
 
-After reading this guide, you will know:
+读完本文后，您将学到：
 
 * How to receive email within a Rails application.
 * How to configure Action Mailbox.
@@ -15,7 +12,7 @@ After reading this guide, you will know:
 
 --------------------------------------------------------------------------------
 
-Introduction
+简介
 ------------
 
 Action Mailbox routes incoming emails to controller-like mailboxes for
@@ -32,7 +29,7 @@ These inbound emails are routed asynchronously using Active Job to one or
 several dedicated mailboxes, which are capable of interacting directly
 with the rest of your domain model.
 
-## Setup
+## 设置
 
 Install migrations needed for `InboundEmail` and ensure Active Storage is set up:
 
@@ -41,7 +38,7 @@ $ rails action_mailbox:install
 $ rails db:migrate
 ```
 
-## Configuration
+## 配置
 
 ### Exim
 

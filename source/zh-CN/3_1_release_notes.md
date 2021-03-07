@@ -1,9 +1,7 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Ruby on Rails 3.1 Release Notes
+Ruby on Rails 3.1 发布记
 ===============================
 
-Highlights in Rails 3.1:
+Rails 3.1 的重要变化：
 
 * Streaming
 * Reversible Migrations
@@ -100,6 +98,7 @@ gem 'jquery-rails'
 
     # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
     # config.assets.precompile `= %w( search.js )
+    ```
 
 
     # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.

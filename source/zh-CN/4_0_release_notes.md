@@ -1,9 +1,7 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
-
-Ruby on Rails 4.0 Release Notes
+Ruby on Rails 4.0 发布记
 ===============================
 
-Highlights in Rails 4.0:
+Rails 3.3 的重要变化：
 
 * Ruby 2.0 preferred; 1.9.3+ required
 * Strong Parameters
