@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-Ruby on Rails Guides
+Ruby on Rails 指南
 <% end %>
 
 <% content_for :header_section do %>
@@ -10,9 +10,7 @@ Ruby on Rails Guides
 <div id="subCol">
   <dl>
     <dt></dt>
-    <dd class="kindle">Rails 指南同时提供 <%= link_to 'Kindle', 'https://github.com/ruby-china/rails-guides/releases' %> 版。</dd>
-    <dd class="kindle">如果需要 Epub、PDF 格式，可以购买<%= link_to '安道维护的电子书', 'https://rails.guide/' %>。</dd>
-    <dd class="work-in-progress">标记了这个图标的指南还在编写中，不会出现在指南索引。这些指南可能包含不完整的信息甚至错误。您可以帮忙检查并且提交评论和修正。</dd>
+    <dd class="kindle">Rails 指南同时提供 <%= link_to 'Kindle', 'https://github.com/ruby-china/rails-guides/releases' %> 、<%= link_to 'EPUB', 'https://github.com/ruby-china/rails-guides/releases' %> 和 <%= link_to 'PDF', 'https://github.com/ruby-china/rails-guides/releases' %> 版。</dd>
   </dl>
 </div>
 <% end %>
@@ -21,7 +19,7 @@ Ruby on Rails Guides
   <h3><%= section['name'] %></h3>
   <dl>
     <% section['documents'].each do |document| %>
-      <%= guide(document['name'], document['url'], work_in_progress: document['work_in_progress']) do %>
+      <%= guide(document['name'], document['url']) do %>
         <p><%= document['description'] %></p>
       <% end %>
     <% end %>

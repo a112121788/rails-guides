@@ -17,4 +17,4 @@ COPY Gemfile.lock /app
 RUN bundle install
 
 ENV GUIDES_LANGUAGE=zh-CN
-ENV RAILS_VERSION=v5.1.1
+ENV RAILS_VERSION=v5.2.4.5

@@ -13,7 +13,6 @@ Active Support 是 Rails 核心的一部分，提供 Ruby 语言扩展、实用�
 
 -----------------------------------------------------------------------------
 
-NOTE: 本文原文尚未完工！
 
 <a class="anchor" id="introduction-to-instrumentation"></a>
 
