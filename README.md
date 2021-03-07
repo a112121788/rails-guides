@@ -18,15 +18,14 @@ $ docker build -t rails-guides .
 
 ```bash
 $ docker run -it -v $(pwd):/app rails-guides rake guides:generate:html
-$ docker run -it -v $(pwd):/app rails-guides rake guides:generate:kindle
 ```
 
 
-### 一般构建
+## 一般构建
 
 ```bash
+bundle install
 RAILS_VERSION=v5.2.4.5 rake guides:generate:html
-RAILS_VERSION=v5.2.4.5 rake guides:generate:kindle
 ```
 
 ## 发布
