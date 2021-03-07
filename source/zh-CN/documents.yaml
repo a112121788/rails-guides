@@ -2,9 +2,14 @@
   name: 新手入门
   documents:
     -
-      name: Rails 入门
+      name: Rails 入门(Linux/macOS篇)
       url: getting_started.html
       description: 从安装到建立第一个应用程序所需知道的一切。
+    -
+      name: Rails 入门（Window篇）
+      url: getting_started_windows.html
+      description: 从安装到建立第一个应用程序所需知道的一切。
+
 -
   name: 模型
   documents:
