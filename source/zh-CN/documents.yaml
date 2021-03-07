@@ -159,11 +159,6 @@
       url: active_support_instrumentation.html
       description: 本篇介绍如何通过 Active Support 监测 API 观察 Rails 和其他 Ruby 代码的事件。
     -
-      name: Rails 应用分析指南
-      work_in_progress: false
-      url: profiling.html
-      description: 本篇介绍如何分析 Rails 应用并提高性能。
-    -
       name: 使用 Rails 开发只提供 API 的应用
       url: api_app.html
       description: 本篇介绍如何将 Rails 用于只提供 API 的应用。
@@ -252,7 +247,7 @@
       description: Rails 5.2 的发布说明。
     -
       name: Ruby on Rails 5.1 发布记
-      url: 5_1_release_note.html
+      url: 5_1_release_notes.html
       description: Rails 5.1 的发布说明。
     -
       name: Ruby on Rails 5.0 发布记
