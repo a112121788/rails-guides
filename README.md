@@ -21,6 +21,14 @@ $ docker run -it -v $(pwd):/app rails-guides rake guides:generate:html
 $ docker run -it -v $(pwd):/app rails-guides rake guides:generate:kindle
 ```
 
+
+### 一般构建
+
+```bash
+RAILS_VERSION=v5.2.4.5 rake guides:generate:html
+RAILS_VERSION=v5.2.4.5 rake guides:generate:kindle
+```
+
 ## 发布
 
 另外 clone 一份 repo，checkout 到 `gh-pages` 分支，将 HTML 版内容拷贝进去，commit，push。

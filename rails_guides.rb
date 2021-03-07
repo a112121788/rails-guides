@@ -12,9 +12,9 @@ edge    = `git rev-parse HEAD`.strip unless version
 
 RailsGuides::Generator.new(
   edge:     edge,
-  version:  'v5.2.4.5',
+  version:  version,
   all:      env_flag["ALL"],
   only:     env_value["ONLY"],
-  kindle:   env_flag["KINDLE"],
-  language: 'zh-CN'
+  language: 'zh-CN',
+  kindle:   env_flag["KINDLE"]
 ).generate
