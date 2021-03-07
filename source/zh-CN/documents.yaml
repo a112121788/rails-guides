@@ -50,6 +50,11 @@
       url: layouts_and_rendering.html
       description: 本篇介绍 Action Controller 与 Action View 基本的版型功能，包含了渲染、重定向、使用 content_for 区块、以及局部模版。
     -
+      name: Action View 辅助方法
+      url: action_view_helpers.html
+      description: 本指南介绍了一些更常见的视图辅助对象。
+      work_in_progress: false
+    -
       name: Action View 表单辅助方法
       url: form_helpers.html
       description: 本篇介绍 Action View 的表单辅助方法。
