@@ -1,9 +1,7 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
+# Rails中的线程和代码执行
 
-Threading and Code Execution in Rails
-=====================================
 
-After reading this guide, you will know:
+读完本文后，您将学到：
 
 * What code Rails will automatically execute concurrently
 * How to integrate manual concurrency with Rails internals
@@ -12,8 +10,8 @@ After reading this guide, you will know:
 
 --------------------------------------------------------------------------------
 
-Automatic Concurrency
----------------------
+## Automatic Concurrency
+
 
 Rails automatically allows various operations to be performed at the same time.
 
@@ -34,8 +32,7 @@ ignore that other threads exist.
 The rest of this guide describes the mechanisms Rails uses to make it "mostly
 ignorable", and how extensions and applications with special needs can use them.
 
-Executor
---------
+## Executor
 
 The Rails Executor separates application code from framework code: any time the
 framework invokes code you've written in your application, it will be wrapped by

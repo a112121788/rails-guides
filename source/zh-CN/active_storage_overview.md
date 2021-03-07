@@ -1,11 +1,9 @@
-**DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON http://guides.rubyonrails.org.**
+# Active Storage 基础
 
-Active Storage Overview
-=======================
 
-This guide covers how to attach files to your Active Record models.
+本指南介绍如何将文件附加到Active Record。
 
-After reading this guide, you will know:
+读完本文后，您将学到：
 
 * How to attach one or many files to a record.
 * How to delete an attached file.
@@ -19,8 +17,7 @@ After reading this guide, you will know:
 
 --------------------------------------------------------------------------------
 
-What is Active Storage?
------------------------
+## 简介
 
 Active Storage facilitates uploading files to a cloud storage service like
 Amazon S3, Google Cloud Storage, or Microsoft Azure Storage and attaching those
@@ -33,7 +30,7 @@ Using Active Storage, an application can transform image uploads with
 non-image uploads like PDFs and videos, and extract metadata from arbitrary
 files.
 
-## Setup
+## 设置
 
 Active Storage uses two tables in your application’s database named
 `active_storage_blobs` and `active_storage_attachments`. After creating a new
