@@ -178,7 +178,7 @@ Please refer to the [Changelog][action-cable] for detailed changes.
     `ActionCable::Connection`.
     ([Pull Request](https://github.com/rails/rails/pull/34194))
 
-*   Convert the Action Cable JavaScript package from CoffeeScript to ES2015 and
+*   Convert the Action Cable Javascript package from CoffeeScript to ES2015 and
     publish the source code in the npm distribution.
     ([Pull Request](https://github.com/rails/rails/pull/34370))
 
@@ -233,7 +233,7 @@ Please refer to the [Changelog][action-pack] for detailed changes.
 *   Allow the use of `parsed_body` in `ActionController::TestCase`.
     ([Pull Request](https://github.com/rails/rails/pull/34717))
 
-*   Raise an `ArgumentError` when multiple root routes exist in the same context
+*   Raise an `ArgumentError` when multiple root routes exists in the same context
     without `as:` naming specifications.
     ([Pull Request](https://github.com/rails/rails/pull/34494))
 
@@ -249,7 +249,7 @@ Please refer to the [Changelog][action-pack] for detailed changes.
 *   Expose `ActionController::Parameters#each_key`.
     ([Pull Request](https://github.com/rails/rails/pull/33758))
 
-*   Add purpose and expiry metadata inside signed/encrypted cookies to prevent copying the value of
+*   Add purpose metadata to signed/encrypted cookies to prevent copying the value of
     cookies into one another.
     ([Pull Request](https://github.com/rails/rails/pull/32937))
 
@@ -300,16 +300,25 @@ Please refer to the [Changelog][action-view] for detailed changes.
 *   Deprecate calling private model methods from the `options_from_collection_for_select` view helper.
     ([Pull Request](https://github.com/rails/rails/pull/33547))
 
+*   Deprecate `ActionView::TemplateRender.render(file: )` handling relative paths.
+    Paths should now be absolute.
+    ([Pull Request](https://github.com/rails/rails/pull/35688))
+
+*   Deprecate single arity template handlers. The `call` method of
+    `ActionView::Template::Handlers` subclasses should now accept two parameters,
+    the view object and the source for the view object.
+    ([Pull Request](https://github.com/rails/rails/pull/35119))
+
 ### Notable changes
 
-*   Clear Action View cache in development only on file changes, speeding up
+*   Clear ActionView cache in development only on file changes, speeding up
     development mode.
     ([Pull Request](https://github.com/rails/rails/pull/35629))
 
 *   Move all of the Rails npm packages into a `@rails` scope.
     ([Pull Request](https://github.com/rails/rails/pull/34905))
 
-*   Only accept formats from registered MIME types.
+*   Only accept formats from registered Mime types.
     ([Pull Request](https://github.com/rails/rails/pull/35604), [Pull Request](https://github.com/rails/rails/pull/35753))
 
 *   Add allocations to the template and partial rendering server output.
@@ -327,7 +336,7 @@ Please refer to the [Changelog][action-view] for detailed changes.
     enable `ActionView::Template` finalizers.
     ([Pull Request](https://github.com/rails/rails/pull/32418))
 
-*   Extract the JavaScript `confirm` call to its own, overridable method in `rails_ujs`.
+*   Extract the JS `confirm` call to its own, overridable method in `rails_ujs`.
     ([Pull Request](https://github.com/rails/rails/pull/32404))
 
 *   Add a `action_controller.default_enforce_utf8` configuration option to handle
@@ -336,6 +345,10 @@ Please refer to the [Changelog][action-view] for detailed changes.
 
 *   Add I18n key style support for locale keys to submit tags.
     ([Pull Request](https://github.com/rails/rails/pull/26799))
+
+*   `ActionView::TemplateRender.render(file: )` now renders the file directly,
+    without using any handlers, using the new `Template::RawFile` class.
+    ([Pull Request](https://github.com/rails/rails/pull/35688))
 
 Action Mailer
 -------------
@@ -406,7 +419,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 *   Remove support for passing the column name to `count` when a block is passed.
     ([Commit](https://github.com/rails/rails/commit/67356f2034ab41305af7218f7c8b2fee2d614129))
 
-*   Remove support for delegation of missing methods in a relation to Arel.
+*   Remove support for delegation of missing methods in a relation to arel.
     ([Commit](https://github.com/rails/rails/commit/d97980a16d76ad190042b4d8578109714e9c53d0))
 
 *   Remove support for delegating missing methods in a relation to private methods of the class.
@@ -449,7 +462,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 
 ### Notable changes
 
-*   Bump the minimum version of the `sqlite3` gem to 1.4.
+*   Bump the minimum sqlite3 version to 1.4.
     ([Pull Request](https://github.com/rails/rails/pull/35844))
 
 *   Add `rails db:prepare` to create a database if it doesn't exist, and run its migrations.
@@ -471,7 +484,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
     ([Pull Request](https://github.com/rails/rails/pull/35631))
 
 *   Add `rails db:seed:replant` that truncates tables of each database
-    for the current environment and loads the seeds.
+    for ther current environment and loads the seeds.
     ([Pull Request](https://github.com/rails/rails/pull/34779))
 
 *   Add `reselect` method, which is a short-hand for `unscope(:select).select(fields)`.
@@ -513,7 +526,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
     ([Pull Request](https://github.com/rails/rails/pull/34742))
 
 *   Add the ability to disable scopes generated by `ActiveRecord.enum`.
-    ([Pull Request](https://github.com/rails/rails/pull/34605))
+    ([Pull Request](https://github.com/rails/rails/pull/34605/files))
 
 *   Make implicit ordering configurable for a column.
     ([Pull Request](https://github.com/rails/rails/pull/34480))
@@ -581,7 +594,7 @@ Please refer to the [Changelog][active-record] for detailed changes.
 *   Allow the `:to_table` option of `remove_foreign_key` to be invertible.
     ([Pull Request](https://github.com/rails/rails/pull/33530))
 
-*   Fix default value for MySQL time types with specified precision.
+*   Fix default value for mysql time types with specified precision.
     ([Pull Request](https://github.com/rails/rails/pull/33280))
 
 *   Fix the `touch` option to behave consistently with `Persistence#touch` method.
@@ -692,7 +705,7 @@ Please refer to the [Changelog][active-storage] for detailed changes.
 
 *   Use the `image_processing` gem for Active Storage variants. This replaces using
     `mini_magick` directly.
-    ([Pull Request](https://github.com/rails/rails/pull/32471))
+    ([Pull Request](https://github.com/rails/rails/pull/32471)
 
 Active Model
 ------------
