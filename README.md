@@ -1,31 +1,11 @@
 # Rails Guide 中文翻译
 
-## 构建（基于 Docker）
 
-为了管理依赖，建议使用 Docker。
-
-### 安装 Docker
-
-https://www.docker.com/
-
-### 构建镜像
-
-```bash
-$ docker build -t rails-guides .
-```
-
-### 构建
-
-```bash
-$ docker run -it -v $(pwd):/app rails-guides rake guides:generate:html
-```
-
-
-## 一般构建
+## 构建
 
 ```bash
 bundle install
-RAILS_VERSION=v5.2.4.5 rake guides:generate:html
+RAILS_VERSION=v6.1.3 rake guides:generate:html
 ```
 
 ## 发布
