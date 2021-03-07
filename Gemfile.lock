@@ -51,9 +51,6 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
-    kindlerb (1.2.0)
-      mustache
-      nokogiri
     loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -66,7 +63,6 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
-    mustache (1.1.1)
     nio4r (2.5.7)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -120,7 +116,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  kindlerb
   rails (= 5.2.4.5)
   redcarpet
 
