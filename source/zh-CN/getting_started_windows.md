@@ -17,7 +17,7 @@
 
 本文针对想从零开始开发 Rails 应用的初学者，不要求 Rails 使用经验。不过，为了能顺利阅读，还是需要事先安装好一些软件：
 
-*   [Ruby](https://www.ruby-lang.org/en/downloads) 2.6.6 及以上版本
+*   Ruby 2.6.6 及以上版本。使用 [RubyInstaller](https://rubyinstaller.cn/downloads/)安装。
 *   包管理工具 [RubyGems](https://rubygems.org/)，随 Ruby 预装。若想深入了解 RubyGems，请参阅 [RubyGems 指南](http://guides.rubygems.org/)
 *   Node.js 12 及以上版本
 *   [MySQL数据库](https://www.mysql.com)
